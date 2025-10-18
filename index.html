@@ -9,9 +9,9 @@
 </head>
 <body class="not-loaded">
     
-<audio id="myAudio" autoplay loop muted>
+ <audio id="myAudio" autoplay loop muted>
      <source src="TienhayLui.mp3" type="audio/mpeg">
-</audio>
+ </audio>
     
  <div id="unmuteButton" style="position: fixed; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); padding: 10px 15px; border-radius: 5px; color: #333; font-family: sans-serif; font-size: 14px; cursor: pointer; z-index: 10000; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
     Nhấn để Nghe Nhạc 🔊
@@ -313,30 +313,6 @@
       </div>
     </div>
   </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const unmuteButton = document.getElementById('unmuteButton');
-            const audio = document.getElementById('myAudio');
-
-            if (audio) {
-                // Thử phát nhạc tự động (muted). Hầu hết trình duyệt sẽ cho phép điều này.
-                audio.play().catch(error => {
-                    // console.log("Audio playback was blocked, error: ", error);
-                });
-            }
-
-            if (unmuteButton) {
-                unmuteButton.addEventListener('click', function() {
-                    if (audio) {
-                        audio.muted = false; // Bỏ tắt tiếng
-                        audio.play(); // Đảm bảo nhạc tiếp tục phát
-                        this.style.display = 'none'; // Ẩn nút sau khi nhấn
-                    }
-                });
-            }
-        });
-    </script>
 <script src="main.js"></script>
 </body>
 </html>

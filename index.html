@@ -313,6 +313,29 @@
       </div>
     </div>
   </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const unmuteButton = document.getElementById('unmuteButton');
+            const audio = document.getElementById('myAudio');
+
+            if (audio) {
+                // Thử phát nhạc tự động (muted). Hầu hết trình duyệt sẽ cho phép điều này.
+                audio.play().catch(error => {
+                    // console.log("Audio playback was blocked, error: ", error);
+                });
+            }
+
+            if (unmuteButton) {
+                unmuteButton.addEventListener('click', function() {
+                    if (audio) {
+                        audio.muted = false; // Bỏ tắt tiếng
+                        audio.play(); // Đảm bảo nhạc tiếp tục phát
+                        this.style.display = 'none'; // Ẩn nút sau khi nhấn
+                    }
+                });
+            }
+        });
+    </script>
 <script src="main.js"></script>
 </body>
 </html>

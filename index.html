@@ -10,7 +10,7 @@
 <body class="not-loaded">
     
     <audio id="myAudio" autoplay loop muted>
-        <source src="TienhayLui.mp3" type="audio/mpeg">
+        <source src="MotNgayBuon.mp3" type="audio/mpeg">
         Trình duyệt của Người không hỗ trợ phát âm thanh.
     </audio>
     
@@ -314,31 +314,6 @@
       </div>
     </div>
   </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const unmuteButton = document.getElementById('unmuteButton');
-            const audio = document.getElementById('myAudio');
-
-            if (audio) {
-                // Tự động phát ngay khi trang tải xong (nhờ autoplay và muted)
-                audio.play().catch(error => {
-                    // Xử lý lỗi nếu việc play thất bại (ví dụ: trình duyệt chặn hoàn toàn)
-                    console.log("Audio playback was blocked, error: ", error);
-                });
-            }
-
-            if (unmuteButton) {
-                unmuteButton.addEventListener('click', function() {
-                    if (audio) {
-                        audio.muted = false; // Bỏ tắt tiếng
-                        audio.play(); // Đảm bảo nhạc tiếp tục phát
-                        this.style.display = 'none'; // Ẩn nút sau khi nhấn
-                    }
-                });
-            }
-        });
-    </script>
-<script src="main.js"></script>
 </body>
 </html>
+<script src="main.js"></script>
